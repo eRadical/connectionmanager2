@@ -17,6 +17,7 @@
 #   You should have received a copy of the GNU Library General Public
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+import gi
 
 from gi.repository import GLib
 
@@ -25,6 +26,8 @@ from gi.repository import GLib
 if hasattr(GLib, "set_prgname"):
     GLib.set_prgname('Connection Manager')
 
+
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, Gio
 from StringIO import StringIO
 
@@ -36,7 +39,7 @@ import itertools
 import re
 import sys
 
-VERSION = '0.8.5'
+VERSION = '0.8.4'
 
 supportedTerms = ["Gnome Terminal", "Terminator", "Guake", "TMux", "urxvt", "urxvt256c", "LilyTerm", "Mate Terminal", "XFCE Terminal", "Terminix"]
 supportedTermsCmd = ["gnome-terminal", "terminator", "guake", "tmux", "urxvt", "urxvt256c", "lilyterm", "mate-terminal", "xfce4-terminal", "terminix"]
