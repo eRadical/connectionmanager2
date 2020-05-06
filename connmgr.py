@@ -29,7 +29,10 @@ if hasattr(GLib, "set_prgname"):
 
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, Gio
-from StringIO import StringIO
+try:
+    from StringIO import StringIO ## for Python 2
+except ImportError:
+    from io import StringIO ## for Python 3
 
 import os.path
 import shutil
